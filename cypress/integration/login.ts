@@ -1,6 +1,8 @@
 // Warning: this does not work properly still.
 // Cypress has problems with navigating between domains.
-describe.skip('Login Command', () => {
+// The method used here https://auth0.com/blog/end-to-end-testing-with-cypress-and-auth0/ should be
+// implemented.
+describe('Login Command', () => {
   beforeEach(() => {
     cy.clearCookie('a0:state')
     cy.clearCookie('a0:session')
