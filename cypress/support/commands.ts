@@ -129,11 +129,11 @@ Cypress.Commands.add('navTo', (menuItemTitle) => {
 })
 
 Cypress.Commands.add('login', function () {
+  cy.visit('/')
   cy.getCookie('a0:state').then((cookie) => {
     // If the cookie already exists, skip the login
     if (cookie) return
 
-    cy.visit('/')
     cy.findByLabelText('Email').type(Cypress.env('username'))
     cy.findByLabelText('Password').type(Cypress.env('password'))
     cy.findByRole('button', {name: 'Log In'}).click()
